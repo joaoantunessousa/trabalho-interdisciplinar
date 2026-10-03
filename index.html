@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIRLS POWER | Academia Premium Exclusiva</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts: Syne (Headings) & Montserrat (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#FF66C4',
+                            goldHover: '#FF66C4',
+                            darkBg: '#080808',
+                            cardBg: '#121212',
+                            borderDark: '#222222'
+                        }
+                    },
+                    fontFamily: {
+                        syne: ['Syne', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and keyframes */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080808;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF66C4;
+        }
+        
+        .wheel-container {
+            user-select: none;
+        }
+        
+        .wheel-spin-transition {
+            transition: transform 4.5s cubic-bezier(0.15, 0.99, 0.18, 1);
+        }
+    </style>
+</head>
+<body class="bg-brand-darkBg text-white font-montserrat antialiased selection:bg-brand-gold selection:text-black">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-brand-borderDark">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#inicio" class="font-syne font-black text-2xl tracking-tighter text-white hover:text-brand-gold transition-colors">
+                GIRLS<span class="text-brand-gold">POWER</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-xs font-bold tracking-widest text-neutral-400">
+                <a href="#inicio" class="hover:text-brand-gold transition-colors">INÍCIO</a>
+                <a href="#quem-somos" class="hover:text-brand-gold transition-colors">QUEM SOMOS</a>
+                <a href="#diferenciais" class="hover:text-brand-gold transition-colors">DIFERENCIAIS</a>
+                <a href="#proposta" class="hover:text-brand-gold transition-colors">PROPOSTA</a>
+                <a href="#treinos" class="hover:text-brand-gold transition-colors">TREINOS</a>
+                <a href="#brinquedoteca" class="hover:text-brand-gold transition-colors">BRINQUEDOTECA</a>
+                <a href="#roleta" class="hover:text-brand-gold transition-colors">ROLETA</a>
+            </nav>
+
+            <a href="#roleta" class="hidden sm:inline-flex bg-brand-gold text-black font-extrabold text-xs tracking-wider px-6 py-3 rounded-full hover:bg-white transition-all shadow-[0_0_20px_rgba(255,102,196,0.3)]">
+                GANHAR PRÊMIO
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Menu">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black border-b border-brand-borderDark px-6 py-6 flex flex-col gap-4 text-xs font-bold tracking-widest text-neutral-300">
+            <a href="#inicio" class="mobile-link py-2 hover:text-brand-gold">INÍCIO</a>
+            <a href="#quem-somos" class="mobile-link py-2 hover:text-brand-gold">QUEM SOMOS</a>
+            <a href="#diferenciais" class="mobile-link py-2 hover:text-brand-gold">DIFERENCIAIS</a>
+            <a href="#proposta" class="mobile-link py-2 hover:text-brand-gold">PROPOSTA</a>
+            <a href="#treinos" class="mobile-link py-2 hover:text-brand-gold">TREINOS</a>
+            <a href="#brinquedoteca" class="mobile-link py-2 hover:text-brand-gold">BRINQUEDOTECA</a>
+            <a href="#roleta" class="mobile-link py-2 hover:text-brand-gold">ROLETA</a>
+        </div>
+    </header>
+
+    <!-- 1. Hero Section -->
+    <section id="inicio" class="min-h-screen pt-32 pb-20 flex items-center justify-center relative overflow-hidden bg-radial-gradient">
+        <!-- Glow Effect Backgrounds -->
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-brand-gold/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-brand-gold/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <div class="lg:col-span-7 space-y-8">
+                <div class="inline-flex items-center gap-2 border border-brand-gold/30 bg-brand-gold/5 px-4 py-2 rounded-full text-brand-gold text-xs font-extrabold tracking-widest uppercase">
+                    <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                    Exclusivo para Mulheres
+                </div>
+
+                <h1 class="font-syne font-black text-5xl sm:text-7xl lg:text-8xl leading-none tracking-tight uppercase">
+                    GIRLS POWER<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-[#FF66C4] to-white">ACADEMIA</span>
+                </h1>
+
+                <p class="text-xl sm:text-2xl font-bold text-neutral-300 tracking-wide border-l-4 border-brand-gold pl-4">
+                    "SUA FORÇA, SUA CONFIANÇA, SEU LUGAR."
+                </p>
+
+                <p class="text-neutral-400 text-base sm:text-lg max-w-xl font-light">
+                    Um ambiente de alta performance projetado sem distrações. Infraestrutura completa para elevar seus treinos e transformar seus resultados.
+                </p>
+
+                <div class="pt-4 flex flex-wrap gap-4">
+                    <a href="#quem-somos" class="bg-brand-gold text-black font-extrabold text-sm tracking-wider uppercase px-8 py-5 rounded-full hover:bg-white transition-all shadow-[0_0_30px_rgba(255,102,196,0.25)]">
+                        CONHEÇA A GIRLS POWER
+                    </a>
+                    <a href="#treinos" class="border border-brand-borderDark text-white hover:border-brand-gold font-bold text-sm tracking-wider uppercase px-8 py-5 rounded-full transition-all">
+                        VER TREINOS
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Media Frame -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative w-full h-[480px] sm:h-[580px] rounded-3xl overflow-hidden border border-brand-borderDark shadow-2xl group">
+                    <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&q=80&w=1000" alt="Mulher treinando" class="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-8 left-8 right-8 p-6 bg-black/80 backdrop-blur-md rounded-2xl border border-white/10">
+                        <span class="text-brand-gold text-xs font-black tracking-widest uppercase">Alta Performance</span>
+                        <h3 class="font-syne font-extrabold text-lg text-white mt-1">ESTRUTURA DE ELITE</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Quem Somos -->
+    <section id="quem-somos" class="py-32 border-t border-brand-borderDark bg-brand-darkBg relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <span class="text-brand-gold text-xs font-black tracking-[0.3em] uppercase">CONCEITO & PROPÓSITO</span>
+                <h2 class="font-syne font-black text-3xl sm:text-5xl uppercase tracking-tight">QUEM SOMOS</h2>
+                <div class="w-16 h-1 bg-brand-gold mx-auto"></div>
+                <p class="text-neutral-300 text-lg leading-relaxed pt-4">
+                    A <strong class="text-white">Girls Power Gym</strong> é uma academia exclusiva para mulheres e meninas a partir dos 12 anos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-brand-cardBg border border-brand-borderDark p-8 rounded-2xl hover:border-brand-gold transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <h3 class="font-syne font-bold text-xl uppercase mb-3 text-white">AMBIENTE SEGURO</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Espaço acolhedor onde você se sente segura e completamente à vontade.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-cardBg border border-brand-borderDark p-8 rounded-2xl hover:border-brand-gold transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-syne font-bold text-xl uppercase mb-3 text-white">PRÁTICA DE EXERCÍCIOS</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Treinos para todos os níveis de condicionamento, com acompanhamento dedicado.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-cardBg border border-brand-borderDark p-8 rounded-2xl hover:border-brand-gold transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="font-syne font-bold text-xl uppercase mb-3 text-white">FORÇA E CONFIANÇA</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Desenvolvemos sua força física e autoestima em cada sessão de treino.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-brand-cardBg border border-brand-borderDark p-8 rounded-2xl hover:border-brand-gold transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"></path></svg>
+                    </div>
+                    <h3 class="font-syne font-bold text-xl uppercase mb-3 text-white">BEM-ESTAR INTEGRAL</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">Cuidamos da sua saúde mental e corporal de maneira equilibrada.</p>
+                </div>
+            </div>
+
+            <!-- Broad banner -->
+            <div class="mt-12 bg-gradient-to-r from-brand-cardBg via-neutral-900 to-brand-cardBg border border-brand-gold/30 p-8 rounded-2xl text-center">
+                <h4 class="font-syne font-extrabold text-2xl text-brand-gold uppercase tracking-wider">SEUS OBJETIVOS</h4>
+                <p class="text-neutral-300 text-base mt-2">Incentivamos, respeitamos e motivamos você a ir mais longe em cada desafio!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Por Que Escolher -->
+    <section id="diferenciais" class="py-32 border-t border-brand-borderDark bg-black relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <span class="text-brand-gold text-xs font-black tracking-[0.3em] uppercase">EXCELÊNCIA & FOCO</span>
+                <h2 class="font-syne font-black text-3xl sm:text-5xl uppercase tracking-tight">POR QUE ESCOLHER A GIRLS POWER?</h2>
+                <div class="w-16 h-1 bg-brand-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-cardBg/60 border border-brand-borderDark p-8 rounded-2xl space-y-3">
+                    <span class="text-brand-gold text-2xl font-black">01.</span>
+                    <h3 class="font-syne font-bold text-xl text-white">Ambiente Seguro</h3>
+                    <p class="text-neutral-400 text-sm">Privacidade e respeito total em todas as áreas da academia.</p>
+                </div>
+
+                <div class="bg-brand-cardBg/60 border border-brand-borderDark p-8 rounded-2xl space-y-3">
+                    <span class="text-brand-gold text-2xl font-black">02.</span>
+                    <h3 class="font-syne font-bold text-xl text-white">Acolhimento</h3>
+                    <p class="text-neutral-400 text-sm">Atendimento atencioso e individualizado desde o primeiro dia.</p>
+                </div>
+
+                <div class="bg-brand-cardBg/60 border border-brand-borderDark p-8 rounded-2xl space-y-3">
+                    <span class="text-brand-gold text-2xl font-black">03.</span>
+                    <h3 class="font-syne font-bold text-xl text-white">Acompanhamento</h3>
+                    <p class="text-neutral-400 text-sm">Instrução contínua e auxílio postural em todos os aparelhos.</p>
+                </div>
+
+                <div class="bg-brand-cardBg/60 border border-brand-borderDark p-8 rounded-2xl space-y-3">
+                    <span class="text-brand-gold text-2xl font-black">04.</span>
+                    <h3 class="font-syne font-bold text-xl text-white">Desenvolvimento da Força</h3>
+                    <p class="text-neutral-400 text-sm">Progressão de cargas orientada com foco no seu objetivo específico.</p>
+                </div>
+
+                <div class="bg-brand-cardBg/60 border border-brand-borderDark p-8 rounded-2xl space-y-3">
+                    <span class="text-brand-gold text-2xl font-black">05.</span>
+                    <h3 class="font-syne font-bold text-xl text-white">Confiança & Autoestima</h3>
+                    <p class="text-neutral-400 text-sm">Evolução constante gerando mais segurança no seu dia a dia.</p>
+                </div>
+
+                <div class="bg-brand-cardBg/60 border border-brand-borderDark p-8 rounded-2xl space-y-3">
+                    <span class="text-brand-gold text-2xl font-black">06.</span>
+                    <h3 class="font-syne font-bold text-xl text-white">Motivação Constante</h3>
+                    <p class="text-neutral-400 text-sm">Comunidade engajada e focada na superação de metas pessoais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Nossa Proposta -->
+    <section id="proposta" class="py-32 border-t border-brand-borderDark bg-brand-darkBg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <span class="text-brand-gold text-xs font-black tracking-[0.3em] uppercase">PILARES DA MARCA</span>
+                <h2 class="font-syne font-black text-3xl sm:text-5xl uppercase tracking-tight">NOSSA PROPOSTA</h2>
+                <div class="w-16 h-1 bg-brand-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="relative bg-brand-cardBg border border-brand-borderDark p-10 rounded-3xl overflow-hidden hover:border-brand-gold transition-all duration-300">
+                    <span class="font-syne font-black text-7xl text-neutral-800 absolute top-4 right-6 select-none">01</span>
+                    <div class="relative z-10 space-y-4">
+                        <span class="text-brand-gold text-xs font-extrabold tracking-widest uppercase">PILAR UM</span>
+                        <h3 class="font-syne font-black text-3xl text-white uppercase">SUA FORÇA</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">
+                            Desenvolver o corpo e a mente para superar limites e conquistar mais saúde e bem-estar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="relative bg-brand-cardBg border border-brand-borderDark p-10 rounded-3xl overflow-hidden hover:border-brand-gold transition-all duration-300">
+                    <span class="font-syne font-black text-7xl text-neutral-800 absolute top-4 right-6 select-none">02</span>
+                    <div class="relative z-10 space-y-4">
+                        <span class="text-brand-gold text-xs font-extrabold tracking-widest uppercase">PILAR DOIS</span>
+                        <h3 class="font-syne font-black text-3xl text-white uppercase">SUA CONFIANÇA</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">
+                            Fortalecer a autoestima e valorizar cada conquista, todos os dias.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="relative bg-brand-cardBg border border-brand-borderDark p-10 rounded-3xl overflow-hidden hover:border-brand-gold transition-all duration-300">
+                    <span class="font-syne font-black text-7xl text-neutral-800 absolute top-4 right-6 select-none">03</span>
+                    <div class="relative z-10 space-y-4">
+                        <span class="text-brand-gold text-xs font-extrabold tracking-widest uppercase">PILAR TRÊS</span>
+                        <h3 class="font-syne font-black text-3xl text-white uppercase">SEU LUGAR</h3>
+                        <p class="text-neutral-400 text-sm leading-relaxed">
+                            Um ambiente acolhedor, seguro e feito para todas se sentirem em casa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Atividades e Treinos -->
+    <section id="treinos" class="py-32 border-t border-brand-borderDark bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                <span class="text-brand-gold text-xs font-black tracking-[0.3em] uppercase">MODALIDADES & SERVIÇOS</span>
+                <h2 class="font-syne font-black text-3xl sm:text-5xl uppercase tracking-tight">ATIVIDADES E TREINOS</h2>
+                <div class="w-16 h-1 bg-brand-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Activity 1 -->
+                <div class="bg-brand-cardBg border border-brand-borderDark rounded-2xl p-8 hover:border-brand-gold transition-all">
+                    <span class="text-brand-gold text-xs font-black tracking-widest block mb-2 uppercase">EQUIPAMENTOS DE ELITE</span>
+                    <h3 class="font-syne font-bold text-2xl text-white mb-3">MUSCULAÇÃO</h3>
+                    <p class="text-neutral-400 text-sm">Espaço completo com biomecânica avançada para ganho de massa, definição e fortalecimento muscular.</p>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="bg-brand-cardBg border border-brand-borderDark rounded-2xl p-8 hover:border-brand-gold transition-all">
+                    <span class="text-brand-gold text-xs font-black tracking-widest block mb-2 uppercase">ENERGIA & COMUNIDADE</span>
+                    <h3 class="font-syne font-bold text-2xl text-white mb-3">AULAS COLETIVAS</h3>
+                    <p class="text-neutral-400 text-sm">Aulas em grupo dinâmicas focadas no alto gasto calórico e condicionamento físico integral.</p>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="bg-brand-cardBg border border-brand-borderDark rounded-2xl p-8 hover:border-brand-gold transition-all">
+                    <span class="text-brand-gold text-xs font-black tracking-widest block mb-2 uppercase">TÉCNICA CORRETA</span>
+                    <h3 class="font-syne font-bold text-2xl text-white mb-3">ACOMPANHAMENTO PROFISSIONAL</h3>
+                    <p class="text-neutral-400 text-sm">Instrutoras presentes na sala para atentar à postura, execução e evolução constante.</p>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="bg-brand-cardBg border border-brand-borderDark rounded-2xl p-8 hover:border-brand-gold transition-all">
+                    <span class="text-brand-gold text-xs font-black tracking-widest block mb-2 uppercase">PLANEJAMENTO</span>
+                    <h3 class="font-syne font-bold text-2xl text-white mb-3">TREINOS PERSONALIZADOS</h3>
+                    <p class="text-neutral-400 text-sm">Fichas e cronogramas customizados de acordo com suas metas e nível atual.</p>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="bg-brand-cardBg border border-brand-borderDark rounded-2xl p-8 hover:border-brand-gold transition-all md:col-span-2 lg:col-span-2">
+                    <span class="text-brand-gold text-xs font-black tracking-widest block mb-2 uppercase">SAÚDE E DESEMPENHO</span>
+                    <h3 class="font-syne font-bold text-2xl text-white mb-3">NUTRIÇÃO INTEGRADA</h3>
+                    <p class="text-neutral-400 text-sm">Orientações nutricionais para potencializar seus resultados nos treinos e promover hábitos sustentáveis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Brinquedoteca -->
+    <section id="brinquedoteca" class="py-32 border-t border-brand-borderDark bg-brand-darkBg relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="bg-gradient-to-r from-neutral-900 via-brand-cardBg to-neutral-900 border border-brand-gold/40 rounded-3xl p-10 md:p-16 text-center shadow-[0_0_50px_rgba(255,102,196,0.08)]">
+                <span class="text-brand-gold text-xs font-black tracking-[0.3em] uppercase block mb-4">ESTRUTURA PARA MÃES</span>
+                <h2 class="font-syne font-black text-3xl sm:text-5xl uppercase tracking-tight text-white mb-6">
+                    ESPAÇO KIDS & BRINQUEDOTECA
+                </h2>
+                <p class="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto font-light leading-relaxed italic">
+                    "Um espaço pensado para as crianças, com monitoria, permitindo que mães também possam cuidar de sua saúde e bem-estar."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Roleta de Brindes (SVG Precision Wheel) -->
+    <section id="roleta" class="py-32 border-t border-brand-borderDark bg-black relative">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-gold text-xs font-black tracking-[0.3em] uppercase">EXPERIÊNCIA INTERATIVA</span>
+                <h2 class="font-syne font-black text-3xl sm:text-5xl uppercase tracking-tight">ROLETA DE BRINDES</h2>
+                <div class="w-16 h-1 bg-brand-gold mx-auto"></div>
+                <p class="text-neutral-400 text-sm sm:text-base">Gire a roleta e ganhe um incentivo especial para dar o próximo passo na sua rotina.</p>
+            </div>
+
+            <!-- Wheel Stage -->
+            <div class="relative w-full max-w-[420px] mx-auto wheel-container flex flex-col items-center">
+                
+                <!-- Pointer Anchor -->
+                <div class="relative z-20 -mb-6">
+                    <div class="w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-t-[32px] border-t-brand-gold drop-shadow-[0_4px_10px_rgba(255,102,196,0.8)]"></div>
+                </div>
+
+                <!-- SVG Spinning Disc -->
+                <div class="relative w-full aspect-square rounded-full border-4 border-brand-gold/60 p-2 shadow-[0_0_50px_rgba(255,102,196,0.15)] bg-neutral-950">
+                    <svg id="wheel-svg" viewBox="0 0 500 500" class="w-full h-full wheel-spin-transition transform origin-center">
+                        <!-- Slices rendered by JavaScript for perfect math geometry -->
+                    </svg>
+
+                    <!-- Center Cap -->
+                    <div class="absolute inset-0 m-auto w-20 h-20 bg-black border-4 border-brand-gold rounded-full flex items-center justify-center shadow-lg pointer-events-none">
+                        <span class="font-syne font-black text-xs text-brand-gold tracking-widest">GP</span>
+                    </div>
+                </div>
+
+                <!-- Spin Trigger Button -->
+                <button id="spin-btn" class="mt-12 bg-brand-gold text-black font-extrabold text-sm tracking-widest uppercase px-10 py-5 rounded-full hover:bg-white transition-all shadow-[0_0_30px_rgba(255,102,196,0.3)] disabled:opacity-50">
+                    GIRAR ROLETA
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Result -->
+    <div id="result-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-brand-cardBg border-2 border-brand-gold p-10 rounded-3xl max-w-md w-full text-center space-y-6 shadow-[0_0_50px_rgba(255,102,196,0.25)]">
+            <span class="text-brand-gold text-xs font-black tracking-widest uppercase">RESULTADO DA ROLETA</span>
+            <h3 id="result-title" class="font-syne font-black text-2xl text-white uppercase">---</h3>
+            <p id="result-desc" class="text-neutral-300 text-sm">Apresente este resultado na recepção da academia para validar seu benefício!</p>
+            <button id="close-modal-btn" class="w-full bg-brand-gold text-black font-extrabold text-xs tracking-widest uppercase py-4 rounded-full hover:bg-white transition-colors">
+                RESGATAR / FECHAR
+            </button>
+        </div>
+    </div>
+
+    <!-- 9. Chamada Final -->
+    <section class="py-32 border-t border-brand-borderDark bg-brand-darkBg text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 space-y-8 relative z-10">
+            <h2 class="font-syne font-black text-3xl sm:text-5xl uppercase tracking-tight leading-tight">
+                A GIRLS POWER É MAIS QUE UMA ACADEMIA
+            </h2>
+
+            <p class="text-neutral-300 text-lg leading-relaxed font-light">
+                É um espaço criado para mulheres se sentirem fortes, confiantes e acolhidas todos os dias. Unimos treino, bem-estar e cuidado em um ambiente seguro e pensado para cada mulher ser sua melhor versão.
+            </p>
+
+            <div class="pt-6">
+                <span class="font-syne font-black text-2xl sm:text-4xl text-brand-gold tracking-wider uppercase block">
+                    "SUA FORÇA, SUA CONFIANÇA, SEU LUGAR."
+                </span>
+            </div>
+
+            <div class="pt-8">
+                <a href="#inicio" class="inline-block bg-brand-gold text-black font-extrabold text-sm tracking-widest uppercase px-10 py-5 rounded-full hover:bg-white transition-all shadow-[0_0_30px_rgba(255,102,196,0.3)]">
+                    FAÇA PARTE DA GIRLS POWER
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-brand-borderDark bg-black text-neutral-500 text-xs">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="font-syne font-black text-lg text-white">
+                GIRLS<span class="text-brand-gold">POWER</span>
+            </div>
+            <p>© GIRLS POWER ACADEMIA. TODOS OS DIREITOS RESERVADOS.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // -------------------------------------------------------------
+        // SVG WHEEL ENGINE (Exact Segment Math & Arc Text)
+        // -------------------------------------------------------------
+        const wheelSegments = [
+            { text: "PASSOU A VEZ", color: "#161616" },
+            { text: "10% OFF MENSAL", color: "#FF66C4", textColor: "#000" },
+            { text: "GANHOU ECOBAG", color: "#1F1F1F" },
+            { text: "GARRAFA TÉRMICA", color: "#2B2B2B" },
+            { text: "FAÇA 1 FLEXÃO", color: "#161616" },
+            { text: "5 AGACHAMENTOS", color: "#222222" },
+            { text: "NUTRI GRATUITA", color: "#FF66C4", textColor: "#000" }
+        ];
+
+        const svg = document.getElementById('wheel-svg');
+        const numSegments = wheelSegments.length;
+        const anglePerSegment = 360 / numSegments;
+        const radius = 250;
+        const center = 250;
+
+        // Render SVG wheel slices
+        wheelSegments.forEach((seg, index) => {
+            const startAngle = index * anglePerSegment;
+            const endAngle = startAngle + anglePerSegment;
+
+            // Convert polar coordinates to Cartesian
+            const startRad = (startAngle - 90) * Math.PI / 180;
+            const endRad = (endAngle - 90) * Math.PI / 180;
+
+            const x1 = center + radius * Math.cos(startRad);
+            const y1 = center + radius * Math.sin(startRad);
+            const x2 = center + radius * Math.cos(endRad);
+            const y2 = center + radius * Math.sin(endRad);
+
+            // Path for pie slice
+            const pathData = `M ${center} ${center} L ${x1} ${y1} A ${radius} ${radius} 0 0 1 ${x2} ${y2} Z`;
+
+            const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', pathData);
+            path.setAttribute('fill', seg.color);
+            path.setAttribute('stroke', '#080808');
+            path.setAttribute('stroke-width', '2');
+
+            // Text Label Positioning
+            const midAngle = startAngle + (anglePerSegment / 2);
+            const textRad = (midAngle - 90) * Math.PI / 180;
+            const textDist = radius * 0.65;
+            const tx = center + textDist * Math.cos(textRad);
+            const ty = center + textDist * Math.sin(textRad);
+
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', tx);
+            text.setAttribute('y', ty);
+            text.setAttribute('fill', seg.textColor || '#FFFFFF');
+            text.setAttribute('font-size', '12');
+            text.setAttribute('font-weight', '800');
+            text.setAttribute('font-family', 'Syne, sans-serif');
+            text.setAttribute('text-anchor', 'middle');
+            text.setAttribute('dominant-baseline', 'middle');
+            // Rotate text to match segment orientation
+            text.setAttribute('transform', `rotate(${midAngle + 90}, ${tx}, ${ty})`);
+            text.textContent = seg.text;
+
+            g.appendChild(path);
+            g.appendChild(text);
+            svg.appendChild(g);
+        });
+
+        // Spin Logic
+        const spinBtn = document.getElementById('spin-btn');
+        const modal = document.getElementById('result-modal');
+        const resultTitle = document.getElementById('result-title');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+
+        let currentRotation = 0;
+
+        spinBtn.addEventListener('click', () => {
+            spinBtn.disabled = true;
+
+            // Pick random winner segment
+            const winningIndex = Math.floor(Math.random() * numSegments);
+            const segmentCenter = (winningIndex * anglePerSegment) + (anglePerSegment / 2);
+
+            // Calculate rotation to place winner under top pointer (0 deg)
+            const targetRotation = 360 - segmentCenter;
+            const extraSpins = 360 * 5; // 5 full rounds
+            currentRotation += extraSpins + (targetRotation - (currentRotation % 360));
+
+            svg.style.transform = `rotate(${currentRotation}deg)`;
+
+            setTimeout(() => {
+                const prize = wheelSegments[winningIndex].text;
+                resultTitle.textContent = prize;
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                spinBtn.disabled = false;
+            }, 4600);
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        });
+    </script>
+</body>
+</html>
